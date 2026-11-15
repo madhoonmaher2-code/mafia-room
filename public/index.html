@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11111b"><title>MAFIA ROOM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div><main class="app">
+<header><div class="mark">♠</div><div><h1>MAFIA <span>ROOM</span></h1><p>مين بتثق فيه الليلة؟</p></div></header>
+<section id="home" class="panel">
+<h2>أهلاً بك في المدينة 🌙</h2><p class="muted">أنشئ غرفة خاصة أو ادخل إلى غرفة أصحابك.</p>
+<label>اسمك</label><input id="name" maxlength="18" placeholder="اكتب اسمك">
+<button id="create" class="primary">إنشاء غرفة جديدة</button>
+<div class="or">أو ادخل بكود الغرفة</div>
+<input id="code" maxlength="6" placeholder="مثلاً A1B2C3" class="code">
+<button id="join" class="secondary">دخول الغرفة</button><p id="homeMsg" class="msg"></p>
+</section>
+<section id="lobby" class="panel hidden">
+<div class="roomtop"><div><small>كود الغرفة</small><strong id="roomCode">------</strong></div><button id="copy" class="small">نسخ الكود</button></div>
+<h2>بانتظار اللاعبين</h2><p class="muted">أرسل الكود لأصحابك ليدخلوا من جوالاتهم.</p>
+<div id="players" class="players"></div><p id="lobbyMsg" class="msg"></p>
+<button id="start" class="primary">ابدأ اللعبة</button><p class="hint">اللعبة تحتاج 5 لاعبين على الأقل، والحد الأقصى 8.</p>
+</section>
+<section id="game" class="panel hidden">
+<div class="gamehead"><span id="round">الجولة 1</span><span id="phase" class="pill">الليل</span></div>
+<div id="roleCard" class="rolecard hidden"><small>دورك السري</small><h2 id="roleName">—</h2><p id="roleDesc"></p><p id="teammates"></p></div>
+<h2 id="gameTitle">اللاعبون</h2><p id="gameMessage" class="muted"></p>
+<div id="gamePlayers" class="players"></div>
+<div id="actions" class="actions"></div>
+<div id="mafiaBox" class="mafia hidden"><h3>🕶️ دردشة المافيا السرية</h3><div id="chatLog" class="chatlog"></div><div class="chatrow"><input id="chatInput" placeholder="اكتب رسالة للمافيا"><button id="sendChat">إرسال</button></div></div>
+<div id="notice" class="msg"></div>
+</section>
+<footer>MAFIA ROOM · العبوا بذكاء 😉</footer>
+</main><script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body></html>
